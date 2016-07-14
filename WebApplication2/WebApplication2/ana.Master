@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ana.master.cs" Inherits="WebApplication2.ana" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>White Love</title>
+<meta http-equiv="Content-Language" content="English" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+    <form id="form1" runat="server">
+   
+        <div id="wrap">
+
+<div id="header">
+<h1><a href="#">YBS Yönetim Bilişim Sistemleri</a></h1>
+<h2> Bilişim Her yerde</h2>
+</div>
+
+
+
+<div id="content">
+<div class="left"> 
+     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+</div>
+
+<div class="right"> 
+
+<h2>Categories :</h2>
+<ul>
+<asp:Repeater  runat="server" DataSourceID="sds1">
+    <ItemTemplate>
+     <li><a href="<%#Eval("cat_id","kat_detay.aspx?cat_id={0}") %>"><%#Eval("cat_name")%></a></li> 
+    </ItemTemplate>
+</asp:Repeater>
+
+</ul>
+<asp:SqlDataSource runat="server" ID="sds1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [category]"> </asp:SqlDataSource>
+<h2>Archives</h2>
+<ul>
+<li><a href="#">January 2007</a></li> 
+<li><a href="#">February 2007</a></li> 
+<li><a href="#">March 2007</a></li> 
+<li><a href="#">April 2007</a></li>
+<li><a href="#">May 2007</a></li> 
+<li><a href="#">June 2007</a></li> 
+<li><a href="#">July 2007</a></li> 
+<li><a href="#">August 2007</a></li> 
+<li><a href="#">September 2007</a></li>
+<li><a href="#">October 2007</a></li>
+<li><a href="#">November 2007</a></li>
+<li><a href="#">December 2007</a></li>
+</ul>
+
+</div>
+<div style="clear: both;"> </div>
+</div>
+
+<div id="footer">
+Designed by <a href="http://www.free-css-templates.com/">Free CSS Templates</a>, Thanks to <a href="http://www.openwebdesign.org/">website design</a>
+</div>
+</div>
+
+
+    </form>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ogrenciModelStoreContainer" CdmEntityContainer="ogrenciEntities1">
+    <EntitySetMapping Name="bolums">
+      <EntityTypeMapping TypeName="ogrenciModel.bolum">
+        <MappingFragment StoreEntitySet="bolum">
+          <ScalarProperty Name="Bolum_id" ColumnName="Bolum_id" />
+          <ScalarProperty Name="bolum_name" ColumnName="bolum_name" />
+          <ScalarProperty Name="fak_id" ColumnName="fak_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="derslers">
+      <EntityTypeMapping TypeName="ogrenciModel.dersler">
+        <MappingFragment StoreEntitySet="dersler">
+          <ScalarProperty Name="ders_id" ColumnName="ders_id" />
+          <ScalarProperty Name="ders_kod" ColumnName="ders_kod" />
+          <ScalarProperty Name="ders_adi" ColumnName="ders_adi" />
+          <ScalarProperty Name="Bolum_id" ColumnName="Bolum_id" />
+          <ScalarProperty Name="sinif" ColumnName="sinif" />
+          <ScalarProperty Name="donem" ColumnName="donem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fakultes">
+      <EntityTypeMapping TypeName="ogrenciModel.fakulte">
+        <MappingFragment StoreEntitySet="fakulte">
+          <ScalarProperty Name="fak_id" ColumnName="fak_id" />
+          <ScalarProperty Name="C_fak_name" ColumnName=" fak_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

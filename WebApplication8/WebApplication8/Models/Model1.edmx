@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ogrenciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bolum">
+          <Key>
+            <PropertyRef Name="Bolum_id" />
+          </Key>
+          <Property Name="Bolum_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bolum_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="fak_id" Type="int" />
+        </EntityType>
+        <EntityType Name="dersler">
+          <Key>
+            <PropertyRef Name="ders_id" />
+          </Key>
+          <Property Name="ders_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ders_kod" Type="nvarchar" MaxLength="50" />
+          <Property Name="ders_adi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bolum_id" Type="int" />
+          <Property Name="sinif" Type="int" />
+          <Property Name="donem" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="fakulte">
+          <Key>
+            <PropertyRef Name="fak_id" />
+          </Key>
+          <Property Name="fak_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name=" fak_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_bolum_Tofak">
+          <End Role="fakulte" Type="Self.fakulte" Multiplicity="0..1" />
+          <End Role="bolum" Type="Self.bolum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fakulte">
+              <PropertyRef Name="fak_id" />
+            </Principal>
+            <Dependent Role="bolum">
+              <PropertyRef Name="fak_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dersler_Tobolum">
+          <End Role="bolum" Type="Self.bolum" Multiplicity="0..1" />
+          <End Role="dersler" Type="Self.dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bolum">
+              <PropertyRef Name="Bolum_id" />
+            </Principal>
+            <Dependent Role="dersler">
+              <PropertyRef Name="Bolum_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ogrenciModelStoreContainer">
+          <EntitySet Name="bolum" EntityType="Self.bolum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dersler" EntityType="Self.dersler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fakulte" EntityType="Self.fakulte" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_bolum_Tofak" Association="Self.FK_bolum_Tofak">
+            <End Role="fakulte" EntitySet="fakulte" />
+            <End Role="bolum" EntitySet="bolum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dersler_Tobolum" Association="Self.FK_dersler_Tobolum">
+            <End Role="bolum" EntitySet="bolum" />
+            <End Role="dersler" EntitySet="dersler" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ogrenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bolum">
+          <Key>
+            <PropertyRef Name="Bolum_id" />
+          </Key>
+          <Property Name="Bolum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bolum_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fak_id" Type="Int32" />
+          <NavigationProperty Name="fakulte" Relationship="Self.FK_bolum_Tofak" FromRole="bolum" ToRole="fakulte" />
+          <NavigationProperty Name="derslers" Relationship="Self.FK_dersler_Tobolum" FromRole="bolum" ToRole="dersler" />
+        </EntityType>
+        <EntityType Name="dersler">
+          <Key>
+            <PropertyRef Name="ders_id" />
+          </Key>
+          <Property Name="ders_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ders_kod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ders_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bolum_id" Type="Int32" />
+          <Property Name="sinif" Type="Int32" />
+          <Property Name="donem" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="bolum" Relationship="Self.FK_dersler_Tobolum" FromRole="dersler" ToRole="bolum" />
+        </EntityType>
+        <EntityType Name="fakulte">
+          <Key>
+            <PropertyRef Name="fak_id" />
+          </Key>
+          <Property Name="fak_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_fak_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="bolums" Relationship="Self.FK_bolum_Tofak" FromRole="fakulte" ToRole="bolum" />
+        </EntityType>
+        <Association Name="FK_bolum_Tofak">
+          <End Role="fakulte" Type="Self.fakulte" Multiplicity="0..1" />
+          <End Role="bolum" Type="Self.bolum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fakulte">
+              <PropertyRef Name="fak_id" />
+            </Principal>
+            <Dependent Role="bolum">
+              <PropertyRef Name="fak_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dersler_Tobolum">
+          <End Role="bolum" Type="Self.bolum" Multiplicity="0..1" />
+          <End Role="dersler" Type="Self.dersler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bolum">
+              <PropertyRef Name="Bolum_id" />
+            </Principal>
+            <Dependent Role="dersler">
+              <PropertyRef Name="Bolum_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ogrenciEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bolums" EntityType="Self.bolum" />
+          <EntitySet Name="derslers" EntityType="Self.dersler" />
+          <EntitySet Name="fakultes" EntityType="Self.fakulte" />
+          <AssociationSet Name="FK_bolum_Tofak" Association="Self.FK_bolum_Tofak">
+            <End Role="fakulte" EntitySet="fakultes" />
+            <End Role="bolum" EntitySet="bolums" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dersler_Tobolum" Association="Self.FK_dersler_Tobolum">
+            <End Role="bolum" EntitySet="bolums" />
+            <End Role="dersler" EntitySet="derslers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ogrenciModelStoreContainer" CdmEntityContainer="ogrenciEntities1">
+          <EntitySetMapping Name="bolums">
+            <EntityTypeMapping TypeName="ogrenciModel.bolum">
+              <MappingFragment StoreEntitySet="bolum">
+                <ScalarProperty Name="Bolum_id" ColumnName="Bolum_id" />
+                <ScalarProperty Name="bolum_name" ColumnName="bolum_name" />
+                <ScalarProperty Name="fak_id" ColumnName="fak_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="derslers">
+            <EntityTypeMapping TypeName="ogrenciModel.dersler">
+              <MappingFragment StoreEntitySet="dersler">
+                <ScalarProperty Name="ders_id" ColumnName="ders_id" />
+                <ScalarProperty Name="ders_kod" ColumnName="ders_kod" />
+                <ScalarProperty Name="ders_adi" ColumnName="ders_adi" />
+                <ScalarProperty Name="Bolum_id" ColumnName="Bolum_id" />
+                <ScalarProperty Name="sinif" ColumnName="sinif" />
+                <ScalarProperty Name="donem" ColumnName="donem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fakultes">
+            <EntityTypeMapping TypeName="ogrenciModel.fakulte">
+              <MappingFragment StoreEntitySet="fakulte">
+                <ScalarProperty Name="fak_id" ColumnName="fak_id" />
+                <ScalarProperty Name="C_fak_name" ColumnName=" fak_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

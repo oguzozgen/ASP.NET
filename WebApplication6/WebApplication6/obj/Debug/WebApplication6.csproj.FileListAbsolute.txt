@@ -1,0 +1,11 @@
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication6\WebApplication6\bin\WebApplication6.dll.config
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication6\WebApplication6\bin\WebApplication6.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication6\WebApplication6\bin\WebApplication6.pdb
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication6\WebApplication6\obj\Debug\WebApplication6.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication6\WebApplication6\obj\Debug\WebApplication6.pdb
+G:\WebApplication6\WebApplication6\bin\WebApplication6.dll.config
+G:\WebApplication6\WebApplication6\bin\WebApplication6.dll
+G:\WebApplication6\WebApplication6\bin\WebApplication6.pdb
+G:\WebApplication6\WebApplication6\obj\Debug\WebApplication6.csprojResolveAssemblyReference.cache
+G:\WebApplication6\WebApplication6\obj\Debug\WebApplication6.dll
+G:\WebApplication6\WebApplication6\obj\Debug\WebApplication6.pdb

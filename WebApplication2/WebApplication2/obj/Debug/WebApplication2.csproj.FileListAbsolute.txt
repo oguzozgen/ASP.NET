@@ -1,0 +1,43 @@
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\WebApplication2.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Antlr3.Runtime.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\AspNet.ScriptManager.bootstrap.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\AspNet.ScriptManager.jQuery.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Microsoft.AspNet.FriendlyUrls.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Microsoft.ScriptManager.MSAjax.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Microsoft.ScriptManager.WebForms.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Microsoft.Web.Infrastructure.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Newtonsoft.Json.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\System.Web.Optimization.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\WebGrease.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\System.Web.Optimization.xml
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Antlr3.Runtime.pdb
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\bin\Microsoft.AspNet.FriendlyUrls.xml
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\Lab-D\Documents\Visual Studio 2013\Projects\WebApplication2\WebApplication2\bin\AjaxControlToolkit.dll
+G:\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+G:\WebApplication2\WebApplication2\bin\WebApplication2.dll
+G:\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+G:\WebApplication2\WebApplication2\bin\Antlr3.Runtime.dll
+G:\WebApplication2\WebApplication2\bin\AspNet.ScriptManager.bootstrap.dll
+G:\WebApplication2\WebApplication2\bin\AspNet.ScriptManager.jQuery.dll
+G:\WebApplication2\WebApplication2\bin\Microsoft.AspNet.FriendlyUrls.dll
+G:\WebApplication2\WebApplication2\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+G:\WebApplication2\WebApplication2\bin\Microsoft.ScriptManager.MSAjax.dll
+G:\WebApplication2\WebApplication2\bin\Microsoft.ScriptManager.WebForms.dll
+G:\WebApplication2\WebApplication2\bin\Microsoft.Web.Infrastructure.dll
+G:\WebApplication2\WebApplication2\bin\Newtonsoft.Json.dll
+G:\WebApplication2\WebApplication2\bin\System.Web.Optimization.dll
+G:\WebApplication2\WebApplication2\bin\WebGrease.dll
+G:\WebApplication2\WebApplication2\bin\System.Web.Optimization.xml
+G:\WebApplication2\WebApplication2\bin\Antlr3.Runtime.pdb
+G:\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
+G:\WebApplication2\WebApplication2\bin\Microsoft.AspNet.FriendlyUrls.xml
+G:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+G:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+G:\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb

@@ -1,0 +1,12 @@
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication4\WebApplication4\bin\WebApplication4.dll.config
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication4\WebApplication4\bin\WebApplication4.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication4\WebApplication4\bin\WebApplication4.pdb
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
+c:\users\lab-d\documents\visual studio 2013\Projects\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb
+C:\Users\Lab-D\documents\visual studio 2013\Projects\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csprojResolveAssemblyReference.cache
+G:\WebApplication4\WebApplication4\bin\WebApplication4.dll.config
+G:\WebApplication4\WebApplication4\bin\WebApplication4.dll
+G:\WebApplication4\WebApplication4\bin\WebApplication4.pdb
+G:\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csprojResolveAssemblyReference.cache
+G:\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
+G:\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb

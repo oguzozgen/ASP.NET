@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ogrenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bolum">
+    <Key>
+      <PropertyRef Name="Bolum_id" />
+    </Key>
+    <Property Name="Bolum_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bolum_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fak_id" Type="Int32" />
+    <NavigationProperty Name="fakulte" Relationship="Self.FK_bolum_Tofak" FromRole="bolum" ToRole="fakulte" />
+    <NavigationProperty Name="derslers" Relationship="Self.FK_dersler_Tobolum" FromRole="bolum" ToRole="dersler" />
+  </EntityType>
+  <EntityType Name="dersler">
+    <Key>
+      <PropertyRef Name="ders_id" />
+    </Key>
+    <Property Name="ders_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ders_kod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ders_adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bolum_id" Type="Int32" />
+    <Property Name="sinif" Type="Int32" />
+    <Property Name="donem" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="bolum" Relationship="Self.FK_dersler_Tobolum" FromRole="dersler" ToRole="bolum" />
+  </EntityType>
+  <EntityType Name="fakulte">
+    <Key>
+      <PropertyRef Name="fak_id" />
+    </Key>
+    <Property Name="fak_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_fak_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="bolums" Relationship="Self.FK_bolum_Tofak" FromRole="fakulte" ToRole="bolum" />
+  </EntityType>
+  <Association Name="FK_bolum_Tofak">
+    <End Role="fakulte" Type="Self.fakulte" Multiplicity="0..1" />
+    <End Role="bolum" Type="Self.bolum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fakulte">
+        <PropertyRef Name="fak_id" />
+      </Principal>
+      <Dependent Role="bolum">
+        <PropertyRef Name="fak_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dersler_Tobolum">
+    <End Role="bolum" Type="Self.bolum" Multiplicity="0..1" />
+    <End Role="dersler" Type="Self.dersler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bolum">
+        <PropertyRef Name="Bolum_id" />
+      </Principal>
+      <Dependent Role="dersler">
+        <PropertyRef Name="Bolum_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ogrenciEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bolums" EntityType="Self.bolum" />
+    <EntitySet Name="derslers" EntityType="Self.dersler" />
+    <EntitySet Name="fakultes" EntityType="Self.fakulte" />
+    <AssociationSet Name="FK_bolum_Tofak" Association="Self.FK_bolum_Tofak">
+      <End Role="fakulte" EntitySet="fakultes" />
+      <End Role="bolum" EntitySet="bolums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dersler_Tobolum" Association="Self.FK_dersler_Tobolum">
+      <End Role="bolum" EntitySet="bolums" />
+      <End Role="dersler" EntitySet="derslers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

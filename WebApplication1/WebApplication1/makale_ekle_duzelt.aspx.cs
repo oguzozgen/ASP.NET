@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApplication1
+{
+    public partial class makale_ekle_duzelt : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            SqlDataSource1.InsertParameters["makale_id"].DefaultValue = TextBox1.Text;
+            SqlDataSource1.InsertParameters["makale_baslik"].DefaultValue = TextBox2.Text;
+            SqlDataSource1.InsertParameters["makale_icerik"].DefaultValue = TextBox3.Text;
+            SqlDataSource1.Insert();
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void TextBox4_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+    }
+}
